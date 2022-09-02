@@ -1,19 +1,25 @@
-login 
-		//setting up parameters for login method
-		User_auth auth = new User_auth();
-		auth.setUser_name(USER_NAME);
-		auth.setPassword(PASSWORD);
-		
-		//sending an empty name_value_list
-		Name_value nameValueListLogin[] = null;
-		
-		//trying to login
-		Entry_value loginResponse = null;
-		try {
-			loginResponse = stub.login(auth, APPLICATION_NAME , nameValueListLogin);
-		} catch (RemoteException e) {
-			System.out.println("login failed. Message: "+e.getMessage());
-			e.printStackTrace();
-		}
-		System.out.println("login successful! login id: "+loginResponse.getId());
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    long factorial = 1.0;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    if (n < 0)
+        cout << "Error! Factorial of a negative number doesn't exist.";
+    else {
+        for(int i = 1; i <= n; ++i) {
+            factorial *= i;
+        }
+        cout << "Factorial of " << n << " = " << factorial;    
+    }
+
+    return 0;
+}
+
+
 
